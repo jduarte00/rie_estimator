@@ -23,8 +23,8 @@ setuptools.setup(
     ],
     python_requires=">=3",
     install_requires=[
-        "pandas >= 1.4.0",
-        "numpy >= 1.22.0"
+        "pandas",
+        "numpy"
     ],
     keywords = 'applied-mathematics finance portfolio-theory correlation-matrices noise-reduction random-matrix-theory'
 )
