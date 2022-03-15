@@ -1,45 +1,30 @@
 import setuptools
-import subprocess
-import os
-
-cf_remote_version = (
-    subprocess.run(["git", "describe", "--tags"], stdout=subprocess.PIPE)
-    .stdout.decode("utf-8")
-    .strip()
-)
-assert "." in cf_remote_version
-
-assert os.path.isfile("cf_remote/version.py")
-with open("cf_remote/VERSION", "w", encoding="utf-8") as fh:
-    fh.write(f"{cf_remote_version}\n")
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="cf-remote",
-    version=cf_remote_version,
-    author="Northern.tech, Inc.",
-    author_email="contact@northern.tech",
-    description="Tooling to deploy CFEngine (and much more)",
+    name="rie_estimator",
+    version="0.0.1",
+    author="José Antonio Duarte Mendieta",
+    author_email="jose.duarte@cimat.mx",
+    description="Function to estimate the oracle RIE corrrelation estimator of a dataset",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/cfengine/cf-remote",
-    packages=setuptools.find_packages(),
-    package_data={"cf_remote": ["VERSION"]},
-    include_package_data=True,
+    url="https://github.com/jduarte00/rie_estimator",
+    py_modules = ['rie_estimator']
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+        "Topic :: Software Development :: Libraries :: Python Modules",
         "Operating System :: OS Independent",
+        'Topic :: Scientific/Engineering',
+        'Topic :: Scientific/Engineering :: Mathematics'
     ],
-    python_requires=">=3.6",
-    entry_points={"console_scripts": ["cf-remote = cf_remote.main:main"]},
+    python_requires=">=3",
     install_requires=[
-        "cryptography >= 3.4.4",
-        "fabric >= 2.6.0",
-        "paramiko >= 2.7.2",
-        "requests >= 2.25.1",
-        "apache-libcloud >= 3.3.1",
+        "pandas >= 1.4.0",
+        "numpy >= 1.22.0"
     ],
+    keywords = 'applied-mathematics finance portfolio-theory correlation-matrices noise-reduction random-matrix-theory'
 )

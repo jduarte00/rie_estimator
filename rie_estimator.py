@@ -34,8 +34,6 @@ def RIE_estimator(returns, normalized = False):
     # The eigenvalues and eigenvectors of the returns are obtained
     lambdas, u_ks = LA.eigh(E)
     u_ks = u_ks.T
-    print("u_ks")
-    print(u_ks)
     n_lambda = lambdas[0]
     q = float(N/T)
     sigma_sq = (n_lambda)/(1- np.sqrt(q))**2
@@ -45,32 +43,16 @@ def RIE_estimator(returns, normalized = False):
     print(z_k)
     # Get s_k(z_k)
     s_k = list(map(lambda index_lambda: get_s_k(index_lambda,N), np.argsort(lambdas)))
-    #s_k = z_k - 1
-    print(s_k)
     # Get \xi_k^{RIE}
     xi_k = lambdas / np.abs(1 - q + q *z_k * s_k)**2
-    print("xi_k")
-    print(xi_k)
     #Get stieltjes g_{mp}(z)
     g_mp = (z_k + sigma_sq*(q-1) - (np.sqrt(z_k - n_lambda)* np.sqrt(z_k - lambda_plus)))/(2*q*z_k*sigma_sq)
-    #g_mp = (z_k + sigma_sq*(q-1) - (np.sqrt((z_k - n_lambda)* (z_k - lambda_plus))))/(2*q*z_k*sigma_sq)
-    print("g_mp")
-    print(g_mp)
     # Get gamma_k(z_k)
     gamma_k = sigma_sq * ((np.abs(1 - q + q*z_k*g_mp)**2)/(lambdas))
-    print("gamma_k")
-    print(gamma_k)
     # Get \hat{xh}_k
     xi_hat = list(map(lambda xi, gamma: xi * gamma if gamma > 1 else xi, xi_k, gamma_k))
-    print("xi_hat")
-    print(xi_hat)
     # Get RIE
     for xi, u_i in zip(xi_hat, u_ks):
-        print(RIE_estimator)
-        print(xi)
-        print(u_i)
         RIE_estimator += xi*(u_i.reshape(-1, 1) @ u_i.reshape(-1, 1).T)
         
-    print(RIE_estimator)
-    
     return RIE_estimator
