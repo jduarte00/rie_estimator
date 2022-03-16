@@ -20,14 +20,14 @@ def returnsStandardization(returns):
     return X
 
 # The returns should be a Dataframe of size T X N without NULL values
-def RIE_estimator(returns, normalized = False):
+def RIE_estimator(returns, normalize = False):
     def get_s_k(index_lambda, N):
         return 1/N* (sum(1/(z_k[index_lambda]- lambdas)) - 1/(z_k[index_lambda] - lambdas[index_lambda]))
     
     # T is the number of observations, N is the number of assets 
     T,N = returns.shape
     RIE_estimator = np.zeros((N, N), dtype=float)
-    if normalized:
+    if normalize:
         returns = returnsStandardization(returns)
     # Calculation of the sample correlation matrix
     E = np.corrcoef(returns.T)
