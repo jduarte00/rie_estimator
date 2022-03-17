@@ -64,6 +64,9 @@ print(cleansed_rie)
 
 Just to showcase the improvement of using the RIE estimator against the sample correlation matrix, below it is shown the difference between the in-sample risk and out-of-sample risk of the optimal frontier when using this estimator with the Markowitz portfolio theory with assets from the S&P500. It can be seen that the gap between both risks is reduced when using the RIE estimator, in other words, there is less bias due to the precision of the RIE.
 
+<p align="center" width="100%">
+  <img src="_static/RIEvsE_ing.png" height="350">
+</p>
 
 
 ## To-do
