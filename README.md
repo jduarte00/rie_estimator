@@ -1,5 +1,3 @@
-<p align="center" style="font-size:45px">
-rie_estimator</p>
 
 With this package, you can clean correlation matrices of data sets in the context of high dimensionality using the **RIE Estimator** <img src="https://render.githubusercontent.com/render/math?math=\color{red}\Xi_{RIE}"> (Rotationally Invariant Estimator, a.k.a oracle estimator) developed by Bouchaud and Knowles in 2016 that can be found [here.](https://www.researchgate.net/publication/323255675_An_Optimal_Rotational_Invariant_Estimator_for_General_Covariance_Matrices_the_outliers)
 
@@ -78,12 +76,11 @@ print(cleansed_rie)
 
 Just to show the advantages of using the RIE estimator against the sample correlation matrix, below it is shown the difference between the in-sample risk and out-of-sample risk of the optimal frontier when using the RIE with the Markowitz portfolio theory with assets from the S&P500. It is known that the true risk of the portfolio lies between the calculated in-sample and out-of-sample risk, and therefore a smaller gap between these two indicates a more precise estimation of the true risk, which is the result of using a more precise estimator.
 
- It can be seen that the gap between both risks is reduced when using the RIE estimator, in contrast to the sammple covariance matrix.
+ It can be seen that the gap between both risks is reduced when using the RIE estimator, in contrast to the sample covariance matrix.
 
 <p align="center" width="100%">
-  <img src="_static/RIEvsE_ing.png" height="500">
+  <img src="https://i.ibb.co/C1nnR4d/RIEvs-E-ing.png" height="500">
 </p>
-
 
 ## To-do
 
