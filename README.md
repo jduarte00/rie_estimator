@@ -47,6 +47,7 @@ The input has to be a pandas dataframe containing the raw data with N columns an
 |2021-01-07 | 0.069157 | 0.002832 |-0.012382 | 0.013195|
 |2021-01-08 | 0.036234 |-0.040893 | 0.017518 | 0.011705|
 
+We can calculate the cleansed correlation matrix between this 4 assets as follows:
 
 
 ```python
