@@ -3,8 +3,9 @@ rie_estimator</p>
 
 With this package, you can clean correlation matrices of data sets in the context of high dimensionality using the **RIE Estimator** <img src="https://render.githubusercontent.com/render/math?math=\color{red}\Xi_{RIE}"> (Rotationally Invariant Estimator, a.k.a oracle estimator) developed by Bouchaud and Knowles in 2016 that can be found [here.](https://www.researchgate.net/publication/323255675_An_Optimal_Rotational_Invariant_Estimator_for_General_Covariance_Matrices_the_outliers)
 
-<img align="center" src="https://render.githubusercontent.com/render/math?math=\color{red}\Xi_{RIE}">
-
+<p align = "center">
+<img  src="https://render.githubusercontent.com/render/math?math=\color{red}\Xi_{RIE}">
+</p>
 
 The algorithm to standardize the data matrix and to calculate this estimator is followed exactly as proposed by this authors, and this implementation try to use vectorized operations when possible to improve the speed of the calculations.
 
