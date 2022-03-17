@@ -18,8 +18,11 @@ setuptools.setup(
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Operating System :: OS Independent",
-        'Topic :: Scientific/Engineering',
-        'Topic :: Scientific/Engineering :: Mathematics'
+        "Intended Audience :: Science/Research",
+        'Topic :: Scientific/Engineering :: Mathematics',
+        'Intended Audience :: Financial and Insurance Industry',
+        'Topic :: Office/Business :: Financial :: Investment'
+
     ],
     python_requires=">=3",
     install_requires=[
