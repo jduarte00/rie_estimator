@@ -19,7 +19,7 @@ def returnsStandardization(returns):
 # The returns should be a Dataframe of size T X N without NULL values
 
 
-def get_rie(returns, normalize=False):
+def get_rie(returns, normalize=False, max_ones = True):
     def get_s_k(index_lambda, N):
         return 1/N * (sum(1/(z_k[index_lambda] - lambdas)) - 1/(z_k[index_lambda] - lambdas[index_lambda]))
 
@@ -55,5 +55,9 @@ def get_rie(returns, normalize=False):
     # Get RIE
     for xi, u_i in zip(xi_hat, u_ks):
         RIE_estimator += xi*(u_i.reshape(-1, 1) @ u_i.reshape(-1, 1).T)
+    
+    if max_ones:
+        np.fill_diagonal(RIE_estimator, 1)
+        RIE_estimator[RIE_estimator >1] = 1
 
     return RIE_estimator
