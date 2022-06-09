@@ -58,7 +58,7 @@ data = pd.read_csv('./my dataframe')
 #Calculate the RIE estimator
 # If you don't want your data matrix to be standardize,
 # then set normalize = False
-cleansed_rie = rie_estimator.get_rie(data, normalize = True)
+cleansed_rie = rie_estimator.get_rie(data, normalize = True, max_ones = True)
 
 #Take a look at your cleansed RIE!
 print(cleansed_rie)
